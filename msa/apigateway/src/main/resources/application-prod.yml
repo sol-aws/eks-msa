@@ -36,8 +36,7 @@ spring:
           filters:
             # StripPrefix=1
             # 첫번째 경로(/member-service)를 제거
-            # 예:
-            # /member-service/member/doLogin  -->   /member/doLogin 으로 변환
+            # 예:/member-service/member/doLogin  -->   /member/doLogin 으로 변환
             - StripPrefix=1
           uri: http://member-service    # K8s 내부 서비스명
 
