@@ -13,4 +13,4 @@ spec:
     name: apigateway-depl
   minReplicas: 2
   maxReplicas: 10
-  targetCPUUtilizationPercentage: 30
+  targetCPUUtilizationPercentage: 70
