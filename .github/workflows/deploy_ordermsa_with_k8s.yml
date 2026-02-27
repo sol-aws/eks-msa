@@ -140,7 +140,7 @@ jobs:
 
       - name: deploy ordering
         if: steps.changes.outputs.ordering == 'true'
-        run: |
+        run: | 
           kubectl apply -f ./msa/ordering/k8s/depl_svc.yml
           kubectl rollout restart deployment ordering-depl -n soldesk
 
