@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: msa-root
+  name: msa-services
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/sol-aws/eks-msa.git
     targetRevision: main
-    path: argocd/apps
+    path: msa/k8s/k8s-ingress
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: soldesk
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
